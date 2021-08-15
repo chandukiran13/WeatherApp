@@ -14,7 +14,7 @@ const key = "8e2487f06e40e18330ac4adc6c2e5e45";
 
 getWeather("nandyal");
 function getWeather(city_name){
-    let api = `http://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${key}`;
+    let api = `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${key}`;
     
     fetch(api)
         .then(function(response){
