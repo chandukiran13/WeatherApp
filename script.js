@@ -1,6 +1,6 @@
-const tempElement = document.querySelector(".tempValue p");
-const descElement = document.querySelector(".tempDescription p");
-const locationElement = document.querySelector(".location p");
+const tempElement = document.querySelector("button");
+const descElement = document.querySelector("h3");
+const locationElement = document.querySelector("h5");
 
 const weather = {};
 
@@ -38,22 +38,15 @@ function displayWeather(){
     locationElement.innerHTML = `${weather.city}, ${weather.country}`;
 }
 
-// C to F conversion
-function celsiusToFahrenheit(temp){
-    return (temp * 9/5) + 32;
-}
 
-tempElement.addEventListener("click", function(){
-    if(weather.temp.value === undefined) return;
-    
-    if(weather.temp.unit == "celsius"){
-        let fahrenheit = celsiusToFahrenheit(weather.temp.value);
-        fahrenheit = Math.floor(fahrenheit);
-        
+function celsiusToFahrenheit(){
+    if (weather.temp.unit == "celsius"){
+        let fahrenheit = (weather.temp.value * 9/5) + 32;
         tempElement.innerHTML = `${fahrenheit}°<span>F</span>`;
-        weather.temp.unit = "fahrenheit";
+        weather.temp.unit = "fahrenheit"
     }else{
         tempElement.innerHTML = `${weather.temp.value}°<span>C</span>`;
         weather.temp.unit = "celsius"
     }
-});
+}
+
