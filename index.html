@@ -15,10 +15,15 @@
 <body>
     <div class="container">
         <h1 class="display-4">Weather</h1>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Enter the city" aria-label="Recipient's username"
+                aria-describedby="button-addon2" id="cityInput">
+            <button class="btn btn-light" onclick="getTemp()" type="button" id="button-addon2" id="City">Enter</button>
+        </div>
         <h1 class="display-6">
             Temperature
             <div class="lead">
-                <button class="btn btn-light" type="button" onclick="celsiusToFahrenheit()"></button>
+                <button class="btn btn-light" type="button" onclick="celsiusToFahrenheit()" id="Temperature"></button>
             </div>
         </h1>
         <h3>

@@ -1,18 +1,14 @@
-const tempElement = document.querySelector("button");
+const tempElement = document.getElementById("Temperature");
 const descElement = document.querySelector("h3");
 const locationElement = document.querySelector("h5");
-
+const cityInput = document.getElementById("cityInput");
 const weather = {};
-
 weather.temp = {
     unit: "celsius"
 }
-
 const KELVIN = 273;
 
 const key = "8e2487f06e40e18330ac4adc6c2e5e45";
-
-getWeather("nandyal");
 
 function getWeather(city_name) {
     let api = `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${key}`;
@@ -48,5 +44,11 @@ function celsiusToFahrenheit() {
     } else {
         tempElement.innerHTML = `${weather.temp.value}°<span>C</span>`;
         weather.temp.unit = "celsius"
+    }
+}
+
+function getTemp() {
+    if (cityInput.value !== "") {
+        getWeather(cityInput.value)
     }
 }
